@@ -1,0 +1,17 @@
+
+# Ignore macosx files
+global-exclude .DS_Store
+
+# Ignore python cache files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+
+# ignore jupyter notebook checkpoints
+global-exclude *.ipynb_checkpoints
+
+# Ignore notebooks
+*.ipynb
+
+# Ignore vscode files
+.vscode

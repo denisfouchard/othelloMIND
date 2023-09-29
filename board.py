@@ -138,7 +138,7 @@ class Board():
         # play move
         # check if move is allowed
         if not self.is_allowed_adj(x,y):
-            return 0
+            return -1
         
         d=0
 

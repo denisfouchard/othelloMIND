@@ -8,5 +8,5 @@ class Player(abc.ABC):
         self.color = color
 
     @abc.abstractmethod
-    def move(self, board:board.Board):
+    def move(self, board:board.Board, debug:bool = False):
         pass

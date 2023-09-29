@@ -8,7 +8,7 @@ class RandomPlayer(player.Player):
     def __init__(self, color:int, board:board.Board):
         super().__init__(color, board)
     
-    def move(self, board:board.Board):
+    def move(self, board:board.Board, debug:bool = False):
         """Randomly select a valid move"""
         # checks if it is the player's turn
         if board.turn != self.color:

@@ -25,10 +25,10 @@ class Game():
             r = 0
             # player 1's turn
             if self.board.turn == -1:
-                r = self.player1.move(self.board)
+                r = self.player1.move(self.board, debug)
             # player 2's turn
             else:
-                r = self.player2.move(self.board)
+                r = self.player2.move(self.board, debug)
             if r > 0 : 
                 moves += 1
                 if debug: print(f"Move {moves} - empty squares: {self.board.nb_empty_squares()}")
@@ -48,8 +48,8 @@ class Game():
         
         # checks who won
         score1, score2 = self.board.get_score()
-        u=1 if score1>score2 else 2
-        if debug : print(f"Player 1 score: {score1}, Player 2 score: {score2}, Player {u} wins !")
+        u= -1 if score1>score2 else 1
+        if debug : print(f"White score: {score1}, Black score: {score2}, Player {'black' if u==1 else 'white'} wins !")
 
         return u
             

@@ -1,13 +1,6 @@
 import pygame
-import sys
-import time
-import random
-import numpy as np
-import board
-import players.player as player
+import gameboard
 from players.greedy_player import GreedyPlayer
-from players.random_player import RandomPlayer
-from players.montecarlo_player import MonteCarloPlayer
 from players.default_player import DefaultPlayer
 from game import Game
 
@@ -33,7 +26,7 @@ done = False
 clock = pygame.time.Clock()
 
 # create a game
-game_board = board.Board()
+game_board = gameboard.Board()
 
 # create players
 computer_player = GreedyPlayer(1, game_board)

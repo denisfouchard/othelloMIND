@@ -1,14 +1,12 @@
-import gameboard
-import numpy as np
-import players.base_player as base_player
+from gameboard import Board
+from players.base_player import BasePlayer
 
+class DefaultPlayer(BasePlayer):
 
-class DefaultPlayer(base_player.BasePlayer):
-
-    def __init__(self, color:int, board:gameboard.Board):
+    def __init__(self, color:int, board:Board):
         super().__init__(color, board)
     
-    def move(self, board:gameboard.Board, debug:bool = False):
+    def move(self, board:Board, debug:bool = False):
         """Randomly select a valid move"""
         # checks if it is the player's turn
         if board.turn != self.color:

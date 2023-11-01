@@ -35,7 +35,8 @@ class Game():
                 r = self.player2.move(self.board, debug)
             if r > 0 : 
                 moves += 1
-                if debug: print(f"Move {moves} - empty squares: {self.board.nb_empty_squares()}")
+                if debug: 
+                    print(f"Move {moves} - empty squares: {self.board.nb_empty_squares()}")
                 if display:
                     positions_history.append(self.board.state.copy())
             else:

@@ -1,15 +1,15 @@
-import board
+import gameboard
 import numpy as np
-import players.player as player
+import players.base_player as base_player
 from players.utils import build_wmap
 
-class GreedyPlayer(player.Player):
-    def __init__(self, color:int, board:board.Board):
+class GreedyPlayer(base_player.BasePlayer):
+    def __init__(self, color:int, board:gameboard.Board):
         super().__init__(color, board)
         self.wmap = build_wmap()
         
     
-    def move(self, board:board.Board, debug:bool = False):
+    def move(self, board:gameboard.Board, debug:bool = False):
         """Randomly select a valid move"""
         # checks if it is the player's turn
         if board.turn != self.color:

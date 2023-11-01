@@ -248,7 +248,8 @@ class Board():
     def is_allowed(self, x:int, y:int):
         return self.eval_move(x,y) > 0
     
-    def play(self, x:int, y:int):
+    def play(self, x:int, y:int, no_check=False):
+  
         return self.eval_move(x,y, in_place=True)
     
     def get_allowed_moves(self, display=False):

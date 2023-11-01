@@ -1,10 +1,11 @@
-from board import Board
+from gameboard import Board
 import numpy as np
-import players.player as player
+import players.base_player as base_player
 from game import Game
 from players.greedy_player import GreedyPlayer
+from players.random_player import RandomPlayer
 
-class MonteCarloPlayer(player.Player):
+class MonteCarloPlayer(base_player.BasePlayer):
     def __init__(self, color:int, board:Board):
         super().__init__(color, board)
         self.game_board = board
@@ -31,7 +32,7 @@ class MonteCarloPlayer(player.Player):
                 sim_board.state = board.state.copy()
                 sim_board.play(x,y)
                 # It should be the other player's turn
-                sim_game = Game(GreedyPlayer(-1, sim_board), GreedyPlayer(1, sim_board), sim_board)
+                sim_game = Game(RandomPlayer(-1, sim_board), RandomPlayer(1, sim_board), sim_board)
                 w = sim_game.autoplay()
                 if w == self.color:
                     scores[i] += 1
